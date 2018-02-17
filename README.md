@@ -2,13 +2,14 @@
 
 ## Overview
 
-We'll cover props and show how they help us make our components more dynamic and reusable. 
+We'll cover props and show how they help us make our components more dynamic and reusable.
 
 ## Objectives
 1. Explain how props make our components more dynamic and reusable
 2. Pass props to a component by adding them as attributes when you render them
 2. Declare default prop values in React
 3. Render a component with props and default props
+<!--this is altered   -->
 
 
 ## What are props?
@@ -64,7 +65,7 @@ There's a small code style issue at play here: our line with the `MovieCard` com
 
 ```jsx
 ReactDOM.render(
-  <MovieCard 
+  <MovieCard
     title="Mad Max: Fury Road"
     poster="http://image.tmdb.org/t/p/w342/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
     genres={['Action', 'Adventure', 'Science Fiction', 'Thriller']}
@@ -79,7 +80,7 @@ Notice how we passed in the genres as an inline array? We could also pass in var
 const madMaxGenres = ['Action', 'Adventure', 'Science Fiction', 'Thriller'];
 
 ReactDOM.render(
-  <MovieCard 
+  <MovieCard
     title="Mad Max: Fury Road"
     poster="http://image.tmdb.org/t/p/w342/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
     genres={madMaxGenres}
@@ -99,8 +100,8 @@ class MovieCard extends React.Component {
     return (
       <div className="movie-card">
         <img  
-          src={this.props.poster} 
-          alt={this.props.title} 
+          src={this.props.poster}
+          alt={this.props.title}
         />
         <h2>{this.props.title}</h2>
         <small>Genres: {this.props.genres.join(', ')}</small>
@@ -119,7 +120,7 @@ ReactDOM.render(
   <MovieCard
     title="Jurassic World"
     poster="http://image.tmdb.org/t/p/w342/jjBgi2r5cRt36xF6iNUEhzscEcb.jpg"
-    genres={jurassicWorldGenres} 
+    genres={jurassicWorldGenres}
   />,
   document.getElementById('root')
 );
@@ -146,7 +147,7 @@ const jurassicWorldGenres = ['Action', 'Adventure', 'Science Fiction', 'Thriller
 ReactDOM.render(
   <MovieCard
     title="Jurassic World"
-    genres={jurassicWorldGenres} 
+    genres={jurassicWorldGenres}
   />,
   document.getElementById('root')
 );
